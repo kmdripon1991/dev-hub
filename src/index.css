@@ -10,3 +10,13 @@
 .btn-primary{
     @apply px-4 py-2 bg-blue-400 rounded text-white font-semibold hover:bg-blue-900;
 }
+.location-icon {
+    color: gray;
+  }
+
+  .dollar-icon {
+    color: gray; /* Set the font color to white */
+    border: 1px solid black; /* Set the border color to black */
+    border-radius: 50%;
+    padding: 2px;
+  }

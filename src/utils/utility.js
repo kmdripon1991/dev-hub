@@ -2,10 +2,8 @@ const categoryList = async () => {
   try {
     const categoryListData = await fetch("./categories.json");
     const categoryList = await categoryListData.json();
-    // console.log(categoryList);
     return categoryList;
   } catch (error) {
-    // console.error("Error fetching data:", error);
     throw error;
   }
 };
