@@ -1,8 +1,9 @@
 import { BeakerIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
+import { Link } from "react-router-dom";
 
-const SingleJob = ({ singleJob, handleViewDetails }) => {
+const SingleJob = ({ singleJob }) => {
   const { id, logo, job_title, company_name, location, job_type, salary } =
     singleJob;
   // console.log(singleJob);
@@ -36,9 +37,9 @@ const SingleJob = ({ singleJob, handleViewDetails }) => {
           </small>
         </p>
       </div>
-      <button onClick={() => handleViewDetails(id)} className="btn-primary mt-2">
-        View Details
-      </button>
+      <Link to={`/job/${id}`}>
+        <button className="btn-primary mt-2">View Details</button>
+      </Link>
     </div>
   );
 };

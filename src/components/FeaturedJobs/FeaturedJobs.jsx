@@ -4,12 +4,11 @@ import SingleJob from "../SingleJob/SingleJob";
 
 const FeaturedJobs = () => {
   const getJobsData = useLoaderData();
-  const [jobs, setJobs] = useState(getJobsData.slice(0, 4));
+  const [jobs, setJobs] = useState(getJobsData);
+  const [dataLength, setDataLength] = useState(4);
+
   const handleJobsData = () => {
     setJobs(getJobsData);
-  };
-  const handleViewDetails = (id) => {
-    console.log("detail btn clicked", id);
   };
   return (
     <div className="mt-10 my-container">
@@ -22,17 +21,20 @@ const FeaturedJobs = () => {
       </p>
 
       <div className="grid grid-cols-2 justify-center justify-items-center mt-4 gap-10">
-        {jobs.map((singleJob) => (
-          <SingleJob
-            key={singleJob.id}
-            singleJob={singleJob}
-            handleViewDetails={handleViewDetails}
-          ></SingleJob>
+        {jobs.slice(0, dataLength).map((singleJob) => (
+          <SingleJob key={singleJob.id} singleJob={singleJob}></SingleJob>
         ))}
       </div>
-      <div className="flex items-center justify-center mt-5">
-        <button onClick={() => handleJobsData()} className="btn-primary">
-          See More
+      <div
+        className={`flex items-center justify-center mt-5 ${
+          dataLength === jobs.length ? "hidden" : ""
+        }`}
+      >
+        <button
+          onClick={() => setDataLength(getJobsData.length)}
+          className="btn-primary"
+        >
+          Show All Jobs
         </button>
       </div>
     </div>

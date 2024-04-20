@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Statistics from "./components/Statistics/Statistics.jsx";
 import Home from "./components/Home/Home.jsx";
 import { getJobs } from "./utils/utility.js";
+import JobDetails from "./components/JobDetails/JobDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "statistics",
         element: <Statistics></Statistics>,
+      },
+      {
+        path: "job/:jobId",
+        element: <JobDetails></JobDetails>,
+        loader: getJobs,
       },
     ],
   },

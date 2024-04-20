@@ -3,7 +3,17 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="bg-gray-300">
+    <div
+      className={
+        location.pathname === "/" ? "bg-gray-500" : "bg-contain bg-no-repeat bg-right"
+      }
+      style={{
+        backgroundImage:
+          location.pathname === "/"
+            ? "none"
+            : "url('/src/assets/images/bg2.png')",
+      }}
+    >
       <nav className="my-container flex justify-between">
         <h1 className="font-extrabold text-3xl text-black tracking-wider">
           devHub
@@ -14,7 +24,7 @@ const Header = () => {
           <NavLink>Applied Jobs</NavLink>
           <NavLink>Blog</NavLink>
         </ul>
-        <button className="btn-primary mr-16">Start Applying</button>
+        <button className="btn-primary">Start Applying</button>
       </nav>
     </div>
   );

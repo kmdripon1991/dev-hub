@@ -1,3 +1,5 @@
+import { json } from "react-router-dom";
+
 const categoryList = async () => {
   try {
     const categoryListData = await fetch("./categories.json");
@@ -17,5 +19,22 @@ const getJobs = async () => {
     throw error;
   }
 };
+const getJobApplication = () => {
+  let jobApplication = [];
+  const storedJobApplication = localStorage.getItem("job-application");
+  if (storedJobApplication) {
+    jobApplication = JSON.parse(storedJobApplication);
+  }
+  return jobApplication;
+};
 
-export { categoryList, getJobs };
+const saveJobApplication = (id) => {
+  let jobApplication = getJobApplication();
+  const exists = jobApplication.find((jobId) => jobId === id);
+  if (!exists) {
+    jobApplication.push(id);
+  }
+  localStorage.setItem("job-application", JSON.stringify(jobApplication));
+};
+
+export { categoryList, getJobs, saveJobApplication };
