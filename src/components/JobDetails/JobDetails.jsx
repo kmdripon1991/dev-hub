@@ -9,6 +9,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { MapIcon } from "@heroicons/react/24/outline";
+import toast from "react-hot-toast";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -28,6 +29,7 @@ const JobDetails = () => {
 
   const handleApplyJob = () => {
     saveJobApplication(jobIdInt);
+    toast("Successfully job applied")
     // console.log("btn clicked");
   };
   return (
