@@ -37,4 +37,9 @@ const saveJobApplication = (id) => {
   localStorage.setItem("job-application", JSON.stringify(jobApplication));
 };
 
-export { categoryList, getJobs, saveJobApplication };
+export { 
+  categoryList, 
+  getJobs, 
+  saveJobApplication, 
+  getJobApplication 
+};

@@ -3,10 +3,10 @@ import React from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { Link } from "react-router-dom";
 
-const SingleJob = ({ singleJob }) => {
+const SingleJob = ({ job }) => {
   const { id, logo, job_title, company_name, location, job_type, salary } =
-    singleJob;
-  // console.log(singleJob);
+    job;
+  // console.log(job);
   return (
     <div className="p-5 border rounded w-full">
       {/* <h2>Single job</h2> */}

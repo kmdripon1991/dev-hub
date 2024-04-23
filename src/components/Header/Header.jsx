@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <div
       className={
-        location.pathname === "/" ? "bg-gray-500" : "bg-contain bg-no-repeat bg-right"
+        location.pathname === "/"
+          ? "bg-gray-500"
+          : "bg-contain bg-no-repeat bg-right"
       }
       style={{
         backgroundImage:
@@ -21,7 +23,7 @@ const Header = () => {
         <ul className="flex justify-between items-center gap-8">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/statistics">Statistics</NavLink>
-          <NavLink>Applied Jobs</NavLink>
+          <NavLink to="/applied-jobs">Applied Jobs</NavLink>
           <NavLink>Blog</NavLink>
         </ul>
         <button className="btn-primary">Start Applying</button>

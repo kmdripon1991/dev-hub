@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleJob from "../SingleJob/SingleJob";
 
 const FeaturedJobs = () => {
   const getJobsData = useLoaderData();
-  const [jobs, setJobs] = useState(getJobsData);
+  const [jobs, setJobs] = useState([]);
   const [dataLength, setDataLength] = useState(4);
 
-  const handleJobsData = () => {
-    setJobs(getJobsData);
-  };
+  useEffect(() => {
+    fetch("jobs.json")
+      .then((res) => res.json())
+      .then((data) => setJobs(data));
+  }, []);
   return (
     <div className="mt-10 my-container">
       <h1 className="text-center font-bold text-3xl">Featured Jobs</h1>
@@ -21,8 +23,8 @@ const FeaturedJobs = () => {
       </p>
 
       <div className="grid grid-cols-2 justify-center justify-items-center mt-4 gap-10">
-        {jobs.slice(0, dataLength).map((singleJob) => (
-          <SingleJob key={singleJob.id} singleJob={singleJob}></SingleJob>
+        {jobs.slice(0, dataLength).map((job) => (
+          <SingleJob key={job.id} job={job}></SingleJob>
         ))}
       </div>
       <div

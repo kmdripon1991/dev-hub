@@ -30,7 +30,6 @@ const JobDetails = () => {
   const handleApplyJob = () => {
     saveJobApplication(jobIdInt);
     toast("Successfully job applied")
-    // console.log("btn clicked");
   };
   return (
     <div>
