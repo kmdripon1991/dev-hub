@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
+  console.log(jobs)
   const { jobId } = useParams();
   const jobIdInt = parseInt(jobId);
   const job = jobs.find((job) => job.id === jobIdInt);
