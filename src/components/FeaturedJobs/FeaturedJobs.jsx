@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 import SingleJob from "../SingleJob/SingleJob";
 
 const FeaturedJobs = () => {
-  const getJobsData = useLoaderData();
   const [jobs, setJobs] = useState([]);
   const [dataLength, setDataLength] = useState(4);
 
@@ -33,7 +32,7 @@ const FeaturedJobs = () => {
         }`}
       >
         <button
-          onClick={() => setDataLength(getJobsData.length)}
+          onClick={() => setDataLength(jobs.length)}
           className="btn-primary"
         >
           Show All Jobs

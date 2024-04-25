@@ -15,8 +15,10 @@ const JobDetails = () => {
   const jobs = useLoaderData();
   console.log(jobs)
   const { jobId } = useParams();
+  console.log(jobId, typeof jobId)
   const jobIdInt = parseInt(jobId);
   const job = jobs.find((job) => job.id === jobIdInt);
+
   const {
     job_title,
     job_description,
@@ -26,7 +28,6 @@ const JobDetails = () => {
     salary,
     contact_information,
   } = job;
-  // console.log(job);
 
   const handleApplyJob = () => {
     saveJobApplication(jobIdInt);

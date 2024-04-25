@@ -5,7 +5,6 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Statistics from "./components/Statistics/Statistics.jsx";
 import Home from "./components/Home/Home.jsx";
-import { getJobs } from "./utils/utility.js";
 import JobDetails from "./components/JobDetails/JobDetails.jsx";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs.jsx";
 import appliedJobsLoader from "./loaders/appliedJobsLoader.js";
@@ -42,3 +41,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+

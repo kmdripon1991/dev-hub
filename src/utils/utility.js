@@ -19,6 +19,7 @@ const getJobs = async () => {
     throw error;
   }
 };
+
 const getJobApplication = () => {
   let jobApplication = [];
   const storedJobApplication = localStorage.getItem("job-application");
