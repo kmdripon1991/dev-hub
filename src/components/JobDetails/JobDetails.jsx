@@ -8,14 +8,13 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import { MapIcon } from "@heroicons/react/24/outline";
 import toast from "react-hot-toast";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
   console.log(jobs)
   const { jobId } = useParams();
-  console.log(jobId, typeof jobId)
+  // console.log(jobId, typeof jobId)
   const jobIdInt = parseInt(jobId);
   const job = jobs.find((job) => job.id === jobIdInt);
 
@@ -68,7 +67,7 @@ const JobDetails = () => {
         </div>
         <div className="w-1/3">
           <div className="border rounded p-5 space-y-5 bg-gray-300">
-            <div className="space-y-3">
+            <div className="space-y-3 divide-y-2">
               <h2 className="font-bold">Job Details</h2>
               <p className="flex">
                 <CurrencyDollarIcon className="w-6 h-6 text-blue-400"></CurrencyDollarIcon>{" "}

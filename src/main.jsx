@@ -8,11 +8,14 @@ import Home from "./components/Home/Home.jsx";
 import JobDetails from "./components/JobDetails/JobDetails.jsx";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs.jsx";
 import appliedJobsLoader from "./loaders/appliedJobsLoader.js";
+import Blog from "./components/Blog/Blog.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -23,15 +26,19 @@ const router = createBrowserRouter([
         element: <Statistics></Statistics>,
       },
       {
-        path: "job/:jobId",
-        element: <JobDetails></JobDetails>,
-        loader: ()=>fetch('jobs.json'),
+        path: "applied-jobs",
+        element: <AppliedJobs></AppliedJobs>,
+        loader: appliedJobsLoader,
       },
       {
-        path:'applied-jobs',
-        element:<AppliedJobs></AppliedJobs>,
-        loader: appliedJobsLoader,
-      }
+        path: "job/:jobId",
+        element: <JobDetails></JobDetails>,
+        loader: () => fetch("jobs.json"),
+      },
+      {
+        path: "blog",
+        element: <Blog></Blog>,
+      },
     ],
   },
 ]);
@@ -41,4 +48,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
