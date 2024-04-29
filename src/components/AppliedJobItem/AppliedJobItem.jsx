@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AppliedJobItem = ({ job }) => {
   //   console.log(job);
@@ -13,7 +14,7 @@ const AppliedJobItem = ({ job }) => {
     remote_or_onsite,
   } = job;
   return (
-    <div className="my-container space-y-1">
+    <div className="space-y-1">
       <div className="border rounded flex p-3 gap-5 justify-center">
         <div className=" bg-gray-300 w-1/5 rounded flex items-center justify-center">
           <img className="object-center" src={logo} alt="" />
@@ -48,9 +49,9 @@ const AppliedJobItem = ({ job }) => {
                 </p>
               </div>
             </div>
-            <div>
+            <Link to={`/job/${id}`}>
               <button className="btn-primary">View Details</button>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
