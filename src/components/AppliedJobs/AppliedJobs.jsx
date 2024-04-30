@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AppliedJobItem from "../AppliedJobItem/AppliedJobItem";
 
 const AppliedJobs = () => {
   const appliedJobs = useLoaderData();
-  // console.log(jobs);
-  // const [appliedJobs, setAppliedJobs] = useState(jobs);
   const [displayJobs, setDisplayJobs] = useState(appliedJobs);
-  // setAppliedJobs(jobs)
-  console.log(appliedJobs);
 
   const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
   const handleJobsFilter = (filter) => {
     if (filter === "all") {
       setDisplayJobs(appliedJobs);
@@ -30,15 +21,24 @@ const AppliedJobs = () => {
       );
       setDisplayJobs(onsiteJobs);
     }
+    setShowMenu(!showMenu);
   };
 
   return (
     <>
+      <div
+        className="bg-contain bg-no-repeat"
+        style={{ backgroundImage: "url('/src/assets/images/bg1.png')" }}
+      >
+        <div className="py-10">
+          <h1 className="text-center text-3xl font-bold">Applied Jobs</h1>
+        </div>
+      </div>
       <div className="my-container">
-        <div className="relative flex items-center justify-end my-16">
+        <div className="relative flex items-center justify-end mb-6">
           <button
             className="px-4 py-2 bg-white border border-gray-300 text-gray-400 rounded-md shadow-md hover:bg-gray-100 inline-flex justify-center"
-            onClick={toggleMenu}
+            onClick={() => setShowMenu(!showMenu)}
           >
             <span>Filter By</span>
             <svg
@@ -88,4 +88,3 @@ const AppliedJobs = () => {
 };
 
 export default AppliedJobs;
-
