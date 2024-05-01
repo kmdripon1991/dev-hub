@@ -1,19 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  const isRootPath = location.pathname === "/";
   return (
     <div
-      className={
-        location.pathname === "/"
-          ? "bg-gray-500"
-          : "bg-contain bg-no-repeat bg-right"
-      }
+      className="bg-gray-400"
       style={{
-        backgroundImage:
-          location.pathname === "/"
-            ? "none"
-            : "url('/src/assets/images/bg2.png')",
+        background: isRootPath || `url('/src/assets/images/bg2.png')`,
+        backgroundPosition: isRootPath || "right",
+        backgroundRepeat: isRootPath || "no-repeat",
+        
       }}
     >
       <nav className="my-container flex justify-between">

@@ -35,7 +35,11 @@ const AppliedJobs = () => {
         </div>
       </div>
       <div className="my-container">
-        <div className="relative flex items-center justify-end mb-6">
+        <div
+          className={`relative flex items-center justify-end ${
+            showMenu === true ? "mb-24" : "mb-8"
+          }`}
+        >
           <button
             className="px-4 py-2 bg-white border border-gray-300 text-gray-400 rounded-md shadow-md hover:bg-gray-100 inline-flex justify-center"
             onClick={() => setShowMenu(!showMenu)}
@@ -55,7 +59,7 @@ const AppliedJobs = () => {
             </svg>
           </button>
           {showMenu && (
-            <div className="absolute right-0 mt-2">
+            <div className="absolute right-0 top-0">
               <div className="bg-white border border-gray-300 rounded-md shadow-md">
                 <button
                   onClick={() => handleJobsFilter("all")}
