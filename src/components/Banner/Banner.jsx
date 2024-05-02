@@ -1,4 +1,5 @@
 import React from "react";
+import user from '../../assets/images/user.png'
 
 const Banner = () => {
   return (
@@ -19,8 +20,8 @@ const Banner = () => {
         <div className="w-1/2">
           <img
             className="object-cover"
-            src="src/assets/images/user.png"
-            alt=""
+            src={user}
+            alt="User"
           />
         </div>
       </div>
