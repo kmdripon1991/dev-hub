@@ -6,27 +6,27 @@ const Statistics = () => {
     {
       id: 1,
       name: "Assignment 1",
-      marks: 60,
+      marks: 57,
     },
     {
       id: 2,
       name: "Assignment 2",
-      marks: 50,
+      marks: 44,
     },
     {
       id: 3,
       name: "Assignment 3",
-      marks: 40,
+      marks: 25,
     },
     {
       id: 4,
       name: "Assignment 4",
-      marks: 45,
+      marks: 28,
     },
     {
       id: 5,
       name: "Assignment 5",
-      marks: 35,
+      marks: 30,
     },
     {
       id: 6,
@@ -36,7 +36,7 @@ const Statistics = () => {
     {
       id: 7,
       name: "Assignment 7",
-      marks: 25,
+      marks: 30,
     },
   ];
 

@@ -4,7 +4,7 @@
 
 
 .my-container{
-    @apply mx-12 px-12 py-8
+    @apply mx-12 px-12 pt-8
 }
 
 .btn-primary{

@@ -14,7 +14,7 @@ const Header = () => {
         
       }}
     >
-      <nav className="my-container flex justify-between">
+      <nav className="my-container flex justify-between pb-8">
         <h1 className="font-extrabold text-3xl text-black tracking-wider">
           devHub
         </h1>
