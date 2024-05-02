@@ -14,7 +14,7 @@ const JobCategoryList = () => {
           need. Its your future
         </small>
       </p>
-      <div className="flex gap-4 mt-4 justify-center">
+      <div className="flex gap-4 mt-4 justify-center items-center">
         {categories.map((category) => (
           <Category key={category.id} category={category}></Category>
         ))}

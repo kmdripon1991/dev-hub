@@ -67,34 +67,45 @@ const JobDetails = () => {
         </div>
         <div className="w-1/3">
           <div className="border rounded p-5 space-y-5 bg-gray-300">
-            <div className="space-y-3 divide-y-2">
+            <div className="space-y-5 divide-y-2">
               <h2 className="font-bold">Job Details</h2>
-              <p className="flex">
-                <CurrencyDollarIcon className="w-6 h-6 text-blue-400"></CurrencyDollarIcon>{" "}
-                <span className="font-bold">Salary: </span> {salary}
-              </p>
-              <p className="flex">
-                <BriefcaseIcon className="w-6 h-6 text-blue-400"></BriefcaseIcon>
-                <span className="font-bold">Job Title: </span>
-                {job_title}
-              </p>
+              <div>
+                <p className="flex mt-5">
+                  <CurrencyDollarIcon className="w-6 h-6 text-blue-400"></CurrencyDollarIcon>{" "}
+                  <span className="font-bold">Salary: </span> {salary}
+                </p>
+                <p className="flex">
+                  <BriefcaseIcon className="w-6 h-6 text-blue-400"></BriefcaseIcon>
+                  <span className="font-bold">Job Title: </span>
+                  {job_title}
+                </p>
+              </div>
             </div>
-            <div className="space-y-3">
+
+            <div className="space-y-5 divide-y-2">
               <h2 className="font-bold">Contact Information</h2>
-              <div className="flex gap-2">
-                <PhoneIcon className="w-6 h-6 text-blue-400"></PhoneIcon>{" "}
-                <span className="font-bold">Phone:</span>{" "}
-                {contact_information.phone}
-              </div>
-              <div className="flex gap-2">
-                <EnvelopeIcon className="w-6 h-6 text-blue-400"></EnvelopeIcon>{" "}
-                <span className="font-bold">Email: </span>
-                {contact_information.email}
-              </div>
-              <div className="flex gap-2">
-                <MapPinIcon className="w-6 h-6 text-blue-400"></MapPinIcon>{" "}
-                <span className="font-bold">Address: </span>
-                {contact_information.address}
+              <div>
+                <div className="flex gap-2 mt-5">
+                  <PhoneIcon className="w-6 h-6 text-blue-400"></PhoneIcon>{" "}
+                  <p>
+                    <span className="font-bold">Phone:</span>{" "}
+                    {contact_information.phone}
+                  </p>
+                </div>
+                <div className="flex gap-2">
+                  <EnvelopeIcon className="w-6 h-6 text-blue-400"></EnvelopeIcon>{" "}
+                  <p>
+                    <span className="font-bold">Email: </span>
+                    {contact_information.email}
+                  </p>
+                </div>
+                <div className="flex gap-2">
+                  <MapPinIcon className="w-6 h-6 text-blue-400"></MapPinIcon>{" "}
+                  <p>
+                    <span className="font-bold">Address: </span>
+                    {contact_information.address}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
