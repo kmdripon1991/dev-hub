@@ -1,4 +1,3 @@
-import { BeakerIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { Link } from "react-router-dom";
@@ -14,7 +13,6 @@ const SingleJob = ({ job }) => {
     salary,
     remote_or_onsite,
   } = job;
-  // console.log(job);
   return (
     <div className="p-5 border rounded w-full">
       <div className="h-5">

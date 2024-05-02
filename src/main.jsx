@@ -7,7 +7,10 @@ import Statistics from "./components/Statistics/Statistics.jsx";
 import Home from "./components/Home/Home.jsx";
 import JobDetails from "./components/JobDetails/JobDetails.jsx";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs.jsx";
-import appliedJobsLoader from "./loaders/appliedJobsLoader.js";
+import {
+  appliedJobsLoader,
+  getCategoryAndJobs,
+} from "./loaders/loaders.js";
 import Blog from "./components/Blog/Blog.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
@@ -15,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: getCategoryAndJobs,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -33,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "job/:jobId",
         element: <JobDetails></JobDetails>,
-        loader: () => fetch("jobs.json"),
+        loader: () => fetch("/jobs.json"),
       },
       {
         path: "blog",

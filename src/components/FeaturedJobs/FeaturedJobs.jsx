@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import SingleJob from "../SingleJob/SingleJob";
+import { JobsContext } from "../../App";
 
 const FeaturedJobs = () => {
-  const [jobs, setJobs] = useState([]);
+  const jobs = useContext(JobsContext || []);
   const [dataLength, setDataLength] = useState(4);
-
-  useEffect(() => {
-    fetch("jobs.json")
-      .then((res) => res.json())
-      .then((data) => setJobs(data));
-  }, []);
   return (
     <div className="mt-10 my-container">
       <h1 className="text-center font-bold text-3xl">Featured Jobs</h1>

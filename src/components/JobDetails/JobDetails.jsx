@@ -1,5 +1,5 @@
 import React from "react";
-import { getJobs, saveJobApplication } from "../../utils/utility";
+import { saveJobApplication } from "../../utilities/utility";
 import { useLoaderData, useParams } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { BriefcaseIcon, MapPinIcon } from "@heroicons/react/24/solid";
@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
-  console.log(jobs)
+  console.log(jobs);
   const { jobId } = useParams();
   // console.log(jobId, typeof jobId)
   const jobIdInt = parseInt(jobId);
@@ -30,7 +30,7 @@ const JobDetails = () => {
 
   const handleApplyJob = () => {
     saveJobApplication(jobIdInt);
-    toast("Successfully job applied")
+    toast("Successfully job applied");
   };
   return (
     <div>

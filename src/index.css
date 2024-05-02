@@ -15,8 +15,7 @@
   }
 
   .dollar-icon {
-    color: gray; /* Set the font color to white */
-    border: 1px solid black; /* Set the border color to black */
+    color: gray;
     border-radius: 50%;
     padding: 2px;
   }
